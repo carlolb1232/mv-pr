@@ -16,7 +16,7 @@ const UpdateMovie = () => {
 
   const getMovie = async () => {
     try {
-      const response = await simpleGet(`/api/movies/${id}`);
+      const response = await simpleGet(`http://localhost:8000/api/movies/${id}`);
       console.log(response.data.movie);
       setMovie(response.data.movie)
     } catch (error) {
@@ -30,7 +30,7 @@ const UpdateMovie = () => {
 
   const updateMovie = async (values) => {
     try {
-      const response = await simplePut(`/api/movies/${id}`, values);
+      const response = await simplePut(`http://localhost:8000/api/movies/${id}`, values);
       if (response.data.message === "") {
         console.log(response.data);
         navigate("/")

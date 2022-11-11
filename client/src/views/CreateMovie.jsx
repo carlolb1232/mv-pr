@@ -30,7 +30,7 @@ const CreateMovie = () => {
   const createMovie = async (values) => {
     try {
       values.author=`${user.firstName} ${user.lastName}`
-      const response = await simplePost("/api/movies", values);
+      const response = await simplePost("http://localhost:8000/api/movies", values);
       if (response.data.message === "") {
         console.log(response.data);
         navigate("/")

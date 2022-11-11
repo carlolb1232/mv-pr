@@ -16,7 +16,7 @@ const Main = () => {
 
   const getMovies = async () => {
     try {
-      const response = await simpleGet("/api/movies");
+      const response = await simpleGet("http://localhost:8000/api/movies");
       console.log(response.data)
       setMovies(response.data.movies);
     } catch (error) {
@@ -38,7 +38,7 @@ const Main = () => {
 
   const deleteMovie = async (id) => {
     try {
-      const response = await simpleDelete(`/api/movies/${id}`)
+      const response = await simpleDelete(`http://localhost:8000/api/movies/${id}`)
       console.log(response.data)
       if (response.data.message === "") {
         console.log(response.data);

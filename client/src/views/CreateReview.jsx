@@ -24,7 +24,7 @@ const CreateReview = () => {
     try {
       values.author =  `${user.firstName} ${user.lastName}`;
       values.idMovie = idMovie;
-      const response = await simplePost(`/api/reviews`, values)
+      const response = await simplePost(`http://localhost:8000/api/reviews`, values)
       if (response.data.message === "") {
         console.log(response.data);
         navigate("/")

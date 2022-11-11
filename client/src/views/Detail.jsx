@@ -13,7 +13,7 @@ const Detail = () => {
 
   const getMovie = async () => {
     try {
-      const response = await simpleGet(`/api/movies/${id}`);
+      const response = await simpleGet(`http://localhost:8000/api/movies/${id}`);
       console.log(response.data);
       if (response.data.message === "") {
         console.log(response.data);
@@ -36,7 +36,7 @@ const Detail = () => {
 
   const getReviews = async () => {
     try {
-      const response = await simpleGet(`/api/reviews/${id}`);
+      const response = await simpleGet(`http://localhost:8000/api/reviews/${id}`);
       console.log(response.data.reviews);
       if (response.data.message === "") {
         console.log(response.data);
